@@ -25256,7 +25256,7 @@ pre > code.highlight {
 .ct-sidebar .nav > li > a, .ct-sidebar .leftsidebar .leftsidebar ul > li > a, .leftsidebar .leftsidebar .ct-sidebar ul > li > a {
   display: block;
   padding: 0.25rem 1.5rem;
-  font-size: 12px;
+  font-size: 84%;
   color: #4c555a;
 }
 
@@ -25413,6 +25413,23 @@ select {
 }
 #dokuwiki__content .mf_pdf {
   display: inline;
+}
+
+.argon-doku-page-menu {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin: 1.75rem 0 0.5rem;
+}
+.argon-doku-page-menu li {
+  display: inline;
+  fill: #6c757d;
+}
+.argon-doku-page-menu li :hover {
+  fill: #525f7f;
+}
+.argon-doku-page-menu li:nth-of-type(1) {
+  margin-left: 0em;
 }
 
 #tool__bar button {
@@ -25629,6 +25646,10 @@ textarea {
 }
 .leftsidebar a:hover {
   color: #212529;
+}
+
+.ct-sidebar .nav > li > a, .ct-sidebar .leftsidebar .leftsidebar ul > li > a, .leftsidebar .leftsidebar .ct-sidebar ul > li > a {
+  font-size: 12px;
 }
 
 .footer-card {
