@@ -143,6 +143,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 							</div>
 							<?php endif;?>
 
+							<?php if (!tpl_getConf('moveSiteTools')): ?>
 							<div class="ct-toc-item active">
 
 								<a class="ct-toc-link">
@@ -161,8 +162,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									?>
 								</ul>
 							</div>
-
-
+							<?php endif;?>
 
 							<?php if ($showSidebar): ?>
 							<div id="dokuwiki__aside" class="ct-toc-item active">
@@ -176,6 +176,28 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 								</div>
 							</div>
 							<?php endif;?>
+
+							<?php if (tpl_getConf('moveSiteTools')): ?>
+							<div class="ct-toc-item active">
+
+								<a class="ct-toc-link">
+									<?php echo $lang['site_tools'] ?>
+								</a>
+								<ul class="nav ct-sidenav">
+									<?php
+									$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
+									foreach($menu_items as $item) {
+									echo '<li>'
+										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
+										. $item->getLabel()
+										. '</a></li>';
+									}
+
+									?>
+								</ul>
+							</div>
+							<?php endif;?>
+
 						</nav>
 					</div>
 
