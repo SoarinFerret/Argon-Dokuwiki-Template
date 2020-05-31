@@ -74,7 +74,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 						<?php
 						$menu_items = (new \dokuwiki\Menu\UserMenu())->getItems();
 						foreach($menu_items as $item) {
-						echo '<li>'
+						echo '<li class="'.$item->getType().'">'
 							.'<a class="nav-link" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 							.'<i class="argon-doku-navbar-icon">'.inlineSVG($item->getSvg()).'</i>'
 							. '<span class="a11y">'.$item->getLabel().'</span>'
@@ -133,7 +133,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									<?php
 									$menu_items = (new \dokuwiki\Menu\PageMenu())->getItems();
 									foreach($menu_items as $item) {
-									echo '<li>'
+									echo '<li class="'.$item->getType().'">'
 										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 										. $item->getLabel()
 										. '</a></li>';
@@ -153,7 +153,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 									<?php
 									$menu_items = (new \dokuwiki\Menu\SiteMenu())->getItems();
 									foreach($menu_items as $item) {
-									echo '<li>'
+									echo '<li class="'.$item->getType().'">'
 										.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 										. $item->getLabel()
 										. '</a></li>';
@@ -286,7 +286,7 @@ $showSidebar = page_findnearest($conf['sidebar']) && ($ACT == 'show');
 										<?php
 										$menu_items = (new \dokuwiki\Menu\MobileMenu())->getItems();
 										foreach($menu_items as $item) {
-										echo '<li>'
+										echo '<li class="'.$item->getType().'">'
 											.'<a class="" href="'.$item->getLink().'" title="'.$item->getTitle().'">'
 											.'<i class="">'.inlineSVG($item->getSvg()).'</i>'
 											. '<span class="a11y">'.$item->getLabel().'</span>'
